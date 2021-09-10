@@ -61,61 +61,28 @@ export class AuthService {
 
   signOut() {
     const res = this.authClient.signOut();
-    this.ngZone.run(() => this.router.navigate(['auth/login'])).then();
+    this.ngZone.run(() => this.router.navigate(['login'])).then();
     return of(res);
-  }
-
-  async googleConnect(): Promise<any> {
-    const credential = this.authClient.signInWithPopup(
-      new auth.GoogleAuthProvider()
-    );
-    return this.loginHandler(credential);
-  }
-
-  async facebookConnect(): Promise<any> {
-    const credential = this.authClient.signInWithPopup(
-      new auth.FacebookAuthProvider()
-    );
-    return this.loginHandler(credential);
-  }
-
-  async appleLogin() {
-    const provider = new firebase.auth.OAuthProvider('apple.com');
-    const credential = this.authClient.signInWithPopup(provider);
-    return this.loginHandler(credential);
   }
 
   get userId() {
     return this.user ? this.user.uid : null;
   }
 
-  async emailSignup(
-    email: string,
-    password: string,
-    firstname: string,
-    lastname: string
-  ) {
+  async emailSignup(email: string, password: string, username: string) {
     const credential = this.authClient
       .createUserWithEmailAndPassword(email, password)
       .then((res) => {
-        const mer_ref = firebase.firestore().collection('merchants');
+        const user_ref = firebase.firestore().collection('users');
         const data = {
-          firstname: firstname,
-          lastname: lastname,
-          address: 'Vito Cruz',
-          company: 'Thai Mango',
-          contact: '09999999999',
-          displayName: firstname + ' ' + lastname,
-          email: email,
-          key: 'tm',
-          photoUrl: 'image.jpg',
-          role: 'Owner',
+          username,
+          email
         };
-        mer_ref
+        user_ref
           .doc(res?.user?.uid)
           .set(data)
           .then(() => {
-            console.log('Merchant account created in RTDB');
+            console.log('Account created');
           })
           .catch((error) => {
             alert(error);

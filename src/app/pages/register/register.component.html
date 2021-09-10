@@ -4,33 +4,51 @@
       <mat-card-title>Register</mat-card-title>
     </mat-card-header>
 
-    <form class="example-form">
-
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="example-form">
       <mat-card-content>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Username">
+          <input
+            matInput
+            class="form-control"
+            placeholder="Username"
+            type="username"
+            formControlName="username"
+            required
+          />
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Email">
+          <input
+            matInput
+            class="form-control"
+            placeholder="Email"
+            type="email"
+            formControlName="email"
+            required
+          />
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Password">
-        </mat-form-field>
-
-        <mat-form-field class="example-full-width">
-          <mat-label>Choose a role...</mat-label>
-          <mat-select>
-            <mat-option [value]="roles" *ngFor="let roles of Roles">{{roles}}
-            </mat-option>
-          </mat-select>
+          <input
+            matInput
+            class="form-control"
+            placeholder="Password"
+            type="password"
+            formControlName="password"
+            required
+          />
         </mat-form-field>
 
       </mat-card-content>
 
-      <button mat-stroked-button color="accent" class="btn-block">Register</button>
-
+      <button
+        mat-stroked-button
+        color="accent"
+        class="btn-block"
+        [disabled]="!signupForm.valid"
+      >
+        Register
+      </button>
     </form>
   </mat-card>
 </div>
