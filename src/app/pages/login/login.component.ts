@@ -5,7 +5,7 @@ import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   form!: FormGroup;
@@ -17,13 +17,12 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authService: AuthService
-  ) {
-  }
+  ) {}
   async ngOnInit() {
     this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/game';
     this.form = this.fb.group({
       username: ['', Validators.email],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
     });
     if (await this.authService.checkAuthenticated()) {
       await this.router.navigate([this.returnUrl]);
