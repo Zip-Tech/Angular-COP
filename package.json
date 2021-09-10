@@ -1,5 +1,5 @@
 {
-  "name": "angular-cop",
+  "name": "angular-poc",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -12,14 +12,21 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.2.0",
+    "@angular/cdk": "^12.2.5",
     "@angular/common": "~12.2.0",
     "@angular/compiler": "~12.2.0",
     "@angular/core": "~12.2.0",
+    "@angular/flex-layout": "^12.0.0-beta.34",
     "@angular/forms": "~12.2.0",
+    "@angular/material": "^12.2.5",
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
-    "rxjs": "~6.6.0",
+    "@ngneat/until-destroy": "^8.1.4",
+    "@ngrx/store": "^9.2.0",
+    "firebase": "^7.16.0",
+    "rxfire": "^3.13.5",
+    "rxjs": "6.5.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
