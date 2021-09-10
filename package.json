@@ -23,9 +23,10 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "@ngneat/until-destroy": "^8.1.4",
+    "@ngrx/store": "^9.2.0",
     "firebase": "^7.16.0",
-    "rxfire": "^6.0.1",
-    "rxjs": "^6.6.7",
+    "rxfire": "^3.13.5",
+    "rxjs": "6.5.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
