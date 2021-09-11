@@ -11,6 +11,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { RouterModule } from '@angular/router';
+import { AppStateModule } from './state/state.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     AppRoutingModule,
+    AppStateModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
