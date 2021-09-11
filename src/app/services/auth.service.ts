@@ -99,10 +99,6 @@ export class AuthService {
     return this.loginHandler(credential);
   }
 
-  async resetPassword(email: string) {
-    return this.authClient.sendPasswordResetEmail(email);
-  }
-
   async loginHandler(promise: Promise<any>) {
     let res, serverError;
     try {

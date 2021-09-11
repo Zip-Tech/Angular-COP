@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { RouterModule } from '@angular/router';
+import { AppStateModule } from './state/state.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,11 +21,13 @@ import { RegisterComponent } from './pages/register/register.component';
   ],
   imports: [
     AppRoutingModule,
+    AppStateModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     AngularMaterialModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent],
