@@ -1,15 +1,25 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { provideMockStore, MockStore } from '@ngrx/store/testing';
+import { MockLocationStrategy } from '@angular/common/testing';
 
 describe('AppComponent', () => {
+  let store: MockStore;
+  const initialState = { loggedIn: false };
+  let LocationStrategy: any;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
+      imports: [RouterTestingModule],
       declarations: [AppComponent],
+      providers: [
+        provideMockStore({ initialState }),
+        { provide: LocationStrategy, useClass: MockLocationStrategy },
+      ],
     }).compileComponents();
+
+    store = TestBed.inject(MockStore);
   });
 
   it('should create the app', () => {
