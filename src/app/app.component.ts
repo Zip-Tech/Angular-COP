@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { StoreRootState } from './state/state.reducers';
 
@@ -9,16 +9,10 @@ import * as AuthActions from './state/auth/auth.actions';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'angular-poc';
 
-  constructor(private store: Store<StoreRootState>) {}
-
-  ngOnInit() {
-    this.dispatchUser();
-  }
-
-  dispatchUser() {
+  constructor(private store: Store<StoreRootState>) {
     this.store.dispatch(AuthActions.getUser());
   }
 }
