@@ -36,8 +36,8 @@ describe('AppComponent', () => {
   });
 
   it('should ngOnInit call', async () => {
+    spyOn(component, 'dispatchUser');
     component.ngOnInit();
     expect(component.dispatchUser).toHaveBeenCalled();
   });
-
 });
