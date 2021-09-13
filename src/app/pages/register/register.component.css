@@ -31,10 +31,13 @@ body {
 }
 
 .box {
-  position: relative;
-  top: 0;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
   opacity: 1;
-  float: left;
   padding: 60px 50px 40px 50px;
   width: 100%;
   background: #fff;
