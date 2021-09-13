@@ -1,12 +1,33 @@
+import { MockLocationStrategy } from '@angular/common/testing';
+import { NgZone } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import {
+  ActivatedRouteSnapshot,
+  Router,
+  RouterStateSnapshot,
+} from '@angular/router';
+import { of } from 'rxjs';
 
 import { AuthGuardService } from './auth-guard.service';
+import { AuthService } from './auth.service';
 
 describe('AuthGuardService', () => {
   let service: AuthGuardService;
+  let LocationStrategy: any;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [Router, ActivatedRouteSnapshot, RouterStateSnapshot, NgZone],
+      providers: [
+        { provide: LocationStrategy, useClass: MockLocationStrategy },
+        {
+          provide: AuthService,
+          useValue: {
+            getUserDoc$: () => of('users'),
+          },
+        },
+      ],
+    });
     service = TestBed.inject(AuthGuardService);
   });
 });
