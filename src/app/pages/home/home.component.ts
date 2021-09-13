@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@firebase/auth/auth.service';
 import { Store } from '@ngrx/store';
-import { AuthService } from 'src/app/services/auth.service';
-import { User } from 'src/app/state/auth/auth.model';
-import { StoreRootState } from 'src/app/state/state.reducers';
+import { StoreRootState } from '@state/state.reducers';
 
-import * as fromAuth from '../../state/auth/auth.selector';
+import * as fromAuth from '@state/auth/auth.selector';
 
 @Component({
   selector: 'app-home',

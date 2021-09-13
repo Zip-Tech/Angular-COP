@@ -1,13 +1,12 @@
-import { map, catchError, tap, mergeMap, switchMap } from 'rxjs/operators';
+import { map, catchError, mergeMap, switchMap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
-import { of, from } from 'rxjs';
-
+import { of } from 'rxjs';
 
 import { User } from './auth.model';
 
 import * as AuthActions from './auth.actions';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from '@firebase/auth/auth.service';
 
 @Injectable()
 export class AuthEffects {

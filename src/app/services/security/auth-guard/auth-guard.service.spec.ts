@@ -6,10 +6,10 @@ import {
   Router,
   RouterStateSnapshot,
 } from '@angular/router';
+import { AuthService } from '@firebase/auth/auth.service';
 import { of } from 'rxjs';
 
 import { AuthGuardService } from './auth-guard.service';
-import { AuthService } from './auth.service';
 
 describe('AuthGuardService', () => {
   let service: AuthGuardService;

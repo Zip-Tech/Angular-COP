@@ -2,8 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
+import { AuthService } from '@firebase/auth/auth.service';
 import { of } from 'rxjs';
-import { AuthService } from 'src/app/services/auth.service';
 import { AngularMaterialModule } from 'src/app/styles/angular-material.module';
 
 import { LoginComponent } from './login.component';

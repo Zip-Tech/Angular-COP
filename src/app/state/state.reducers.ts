@@ -4,8 +4,8 @@ import { storeLogger } from 'ngrx-store-logger';
 
 import * as fromRouter from '@ngrx/router-store';
 import * as AuthReducer from './auth/auth.reducer';
+import { environment } from '@environments/environment';
 
-import { environment } from 'src/environments/environment';
 
 export interface StoreRootState {
   auth: AuthReducer.State;

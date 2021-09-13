@@ -2,9 +2,9 @@ import { MockLocationStrategy } from '@angular/common/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
+import { AuthService } from '@firebase/auth/auth.service';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { of } from 'rxjs';
-import { AuthService } from 'src/app/services/auth.service';
 import { AngularMaterialModule } from 'src/app/styles/angular-material.module';
 
 import { HomeComponent } from './home.component';
