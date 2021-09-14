@@ -69,35 +69,12 @@ describe('LoginComponent', () => {
     expect(component.loginForm.valid).toBeTruthy();
   });
 
-  // it('should call onButtonClick', fakeAsync(() => {
-  //   spyOn(component, 'onSubmit');
-  //   let btn = fixture.debugElement.queryAll(By.css('button'));
-  //   for (let i = 0; i < btn.length; i++) {
-  //     btn[i].triggerEventHandler('click', null);
-  //   }
-
-  //   tick(); // simulates the passage of time until all pending asynchronous activities finish
-  //   fixture.detectChanges();
-  //   expect(component.onSubmit).toHaveBeenCalled();
-  // }));
+  // Expected spy onSubmit to have been called.
 
   // it(`should call the onSubmit method`, async () => {
   //   spyOn(component, 'onSubmit');
   //   const button = fixture.debugElement.query(By.css('button'));
-  //   button.triggerEventHandler('click', null);
-  //   fixture.detectChanges();
-
-  //   fixture.whenStable().then(() => {
-  //     expect(component.onSubmit).toHaveBeenCalled();
-  //   });
-  // });
-
-  // it('should click Set button', async () => {
-  //   fixture.detectChanges();
-  //   let buttonElement =
-  //     fixture.debugElement.nativeElement.querySelector('.btn-block');
-
-  //   buttonElement.click();
+  //   button.triggerEventHandler('click', {});
   //   fixture.detectChanges();
 
   //   fixture.whenStable().then(() => {

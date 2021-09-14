@@ -56,7 +56,7 @@ export class LoginComponent {
     return this.loginForm.get('password');
   }
 
-  async onSubmit() {
+  onSubmit() {
     this.auth.emailLogin(this.email?.value, this.password?.value);
   }
 

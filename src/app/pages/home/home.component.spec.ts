@@ -61,49 +61,16 @@ describe('HomeComponent', () => {
     expect(component.subscribeToUser).toHaveBeenCalled();
   });
 
-  // it('should subscribeToUser', async () => {
-  //   spyOn(component, 'subscribeToUser');
-  //   component.ngOnInit();
-  //   expect(component.subscribeToUser).toHaveBeenCalled();
-  // });
+  // Expected spy logout to have been called.
 
-  // it('should', async () => {
-  //   let button = fixture.debugElement.nativeElement.querySelector('#logout');
-  //   button.click();
+  // it(`should call the logout method`, async () => {
+  //   spyOn(component, 'logout');
+  //   const button = fixture.debugElement.query(By.css('#logout'));
+  //   button.triggerEventHandler('click', {});
   //   fixture.detectChanges();
 
   //   fixture.whenStable().then(() => {
   //     expect(component.logout).toHaveBeenCalled();
   //   });
   // });
-
-  // it(`should call the onSubmit method`, async(() => {
-  //   spyOn(component, 'logout');
-  //   let button = fixture.debugElement.query(By.css('#logout')).nativeElement;
-  //   button.click();
-  //   expect(component.logout).toHaveBeenCalled();
-  // }));
-
-  // it('should logout call', async () => {
-  //   spyOn(component, 'logout');
-  //   component.logout();
-  //   expect(component.logout).toHaveBeenCalled();
-  // });
-
-  // it('should logout ', async () => {
-  //   // test the before state, i assume the array will be empty beforehand
-  //   expect(component.user).toBeTruthy()
-  //   // invoke the function
-  //   component.logout();
-  //   // test the amount of seats generated
-  //   expect(component.user).toBeFalsy()
-  //   });
-
-  // it('should call subscribeToUser and return user', async(() => {
-  //   const response;
-  //   spyOn(component, 'subscribeToUser').and.returnValue(of(response));
-  //   component.subscribeToUser();
-  //   fixture.detectChanges();
-  //   expect(component.user).toEqual(response);
-  // }));
 });
