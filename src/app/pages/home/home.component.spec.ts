@@ -11,8 +11,7 @@ import { AngularMaterialModule } from 'src/app/styles/angular-material.module';
 
 import { HomeComponent } from './home.component';
 
-class MockUserService {
-  isLoggedIn = true;
+class MockAuthService {
   user = { name: 'Test User' };
 }
 
@@ -68,7 +67,7 @@ describe('HomeComponent', () => {
   //   expect(component.subscribeToUser).toHaveBeenCalled();
   // });
 
-  // it('should', () => {
+  // it('should', async () => {
   //   let button = fixture.debugElement.nativeElement.querySelector('#logout');
   //   button.click();
   //   fixture.detectChanges();
@@ -77,6 +76,13 @@ describe('HomeComponent', () => {
   //     expect(component.logout).toHaveBeenCalled();
   //   });
   // });
+
+  // it(`should call the onSubmit method`, async(() => {
+  //   spyOn(component, 'logout');
+  //   let button = fixture.debugElement.query(By.css('#logout')).nativeElement;
+  //   button.click();
+  //   expect(component.logout).toHaveBeenCalled();
+  // }));
 
   // it('should logout call', async () => {
   //   spyOn(component, 'logout');
