@@ -15,8 +15,12 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule, ReactiveFormsModule, RouterTestingModule,
-        AngularMaterialModule],
+      imports: [
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        RouterTestingModule,
+        AngularMaterialModule,
+      ],
       declarations: [LoginComponent],
       providers: [
         {
@@ -38,5 +42,11 @@ describe('LoginComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should onSubmit call', () => {
+    spyOn(component, 'onSubmit');
+    component.onSubmit();
+    expect(component.onSubmit).toHaveBeenCalled();
   });
 });
