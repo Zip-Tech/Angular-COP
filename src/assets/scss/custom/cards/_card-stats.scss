@@ -1,0 +1,186 @@
+%card-stats {
+  hr {
+    margin: 5px 15px;
+  }
+}
+
+.card-stats {
+  @extend %card-stats;
+
+  .info-icon-iot-devices {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    @include diagonal-gradient($primary, $primary-states);
+
+    &.table-icon {
+      height: 30px;
+      width: 30px;
+    }
+
+    i {
+      color: $white;
+      font-size: 1.7em;
+      padding: 14px 13px;
+    }
+
+    p {
+      padding-top: 10px;
+    }
+
+    &.icon-danger {
+      @include diagonal-gradient($danger, $danger-states);
+    }
+
+    &.icon-warning {
+      @include diagonal-gradient($warning, $warning-states);
+    }
+
+    &.icon-success {
+      @include diagonal-gradient($success, $success-states);
+    }
+
+    &.icon-info {
+      @include diagonal-gradient($info, $info-states);
+    }
+
+    &.icon-primary {
+      @include diagonal-gradient($primary, $primary-states);
+    }
+
+    &.icon-good {
+      @include diagonal-gradient($good, $good);
+    }
+
+    &.icon-mild {
+      @include diagonal-gradient($mild, $mild);
+    }
+
+    &.icon-moderate {
+      @include diagonal-gradient($moderate, $moderate);
+    }
+
+    &.icon-bad {
+      @include diagonal-gradient($bad, $bad);
+    }
+
+    &.icon-severe {
+      @include diagonal-gradient($severe, $severe);
+    }
+  }
+
+  .info-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    @include diagonal-gradient($primary, $primary-states);
+
+    &.table-icon {
+      height: 30px;
+      width: 30px;
+    }
+
+    i {
+      color: $white;
+      font-size: 1.7em;
+      padding: 14px 13px;
+    }
+
+    p {
+      padding-top: 10px;
+    }
+
+    &.icon-normal {
+      @include diagonal-gradient($info, $info-states);
+    }
+
+    &.icon-urgent {
+      @include diagonal-gradient($yellow, $yellow);
+    }
+
+    &.icon-critical {
+      @include diagonal-gradient($warning, $warning-states);
+    }
+
+    &.icon-overdue {
+      @include diagonal-gradient($danger, $danger-states);
+    }
+
+    &.icon-danger {
+      @include diagonal-gradient($danger, $danger-states);
+    }
+
+    &.icon-warning {
+      @include diagonal-gradient($warning, $warning-states);
+    }
+
+    &.icon-success {
+      @include diagonal-gradient($success, $success-states);
+    }
+
+    &.icon-info {
+      @include diagonal-gradient($info, $info-states);
+    }
+
+    &.icon-primary {
+      @include diagonal-gradient($primary, $primary-states);
+    }
+
+    &.icon-good {
+      @include diagonal-gradient($good, $good);
+    }
+
+    &.icon-mild {
+      @include diagonal-gradient($mild, $mild);
+    }
+
+    &.icon-moderate {
+      @include diagonal-gradient($moderate, $moderate);
+    }
+
+    &.icon-bad {
+      @include diagonal-gradient($bad, $bad);
+    }
+
+    &.icon-severe {
+      @include diagonal-gradient($severe, $severe);
+    }
+  }
+
+  .numbers {
+    text-align: right;
+    .card-title {
+      margin-top: 0;
+    }
+    .card-category {
+      margin-bottom: 0;
+      color: $dark-gray;
+    }
+  }
+
+  .card-footer {
+    padding: 0;
+  }
+
+  hr {
+    border-color: lighten($black, 5%);
+  }
+
+  .stats {
+    color: rgba($white, 0.6);
+    margin: 10px 15px;
+    font-size: 0.9em;
+  }
+
+  &.card-white {
+    hr {
+      border-color: rgba(43, 53, 83, 0.2);
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .card-stats [class*='col-'] .statistics::after {
+    display: none;
+  }
+}

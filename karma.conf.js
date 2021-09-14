@@ -9,7 +9,7 @@ module.exports = function (config) {
       require("karma-jasmine"),
       require("karma-chrome-launcher"),
       require("karma-jasmine-html-reporter"),
-      require("karma-coverage"),
+      require('karma-coverage-istanbul-reporter'),
       require("@angular-devkit/build-angular/plugins/karma"),
     ],
     client: {
@@ -20,6 +20,17 @@ module.exports = function (config) {
         // or set a specific seed with `seed: 4321`
       },
       clearContext: false, // leave Jasmine Spec Runner output visible in browser
+    },
+    coverageIstanbulReporter: {
+      dir: require('path').join(__dirname, 'coverage'),
+      reports: ['html', 'lcovonly', 'text', 'cobertura'],
+      fixWebpackSourcePaths: true,
+      thresholds: {
+        statements: 95,
+        lines: 95,
+        branches: 95,
+        functions: 95
+      }
     },
     jasmineHtmlReporter: {
       suppressAll: true, // removes the duplicated traces

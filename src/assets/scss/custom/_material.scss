@@ -1,0 +1,9 @@
+mat-tab-group {
+  mat-tab {
+    .icon-minimal-right::before {
+      .right-arrow:hover {
+         color: $primary;
+      }
+    }
+  }
+}

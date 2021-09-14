@@ -1,0 +1,51 @@
+{
+  "SHARED": {
+    "zip": "zipeli",
+    "about": "About Us",
+    "privacy": "Privacy Policy",
+    "tos": "Terms of Services",
+    "fb": "Facebook",
+    "google": "Google",
+    "ig": "Instagram",
+    "tw": "Twitter",
+    "and": "and",
+    "rights": "All Rights Reserved.",
+    "CURRENCY": {
+      "PHP": "₱"
+    }
+  },
+  "AUTH": {
+    "login": "Log in",
+    "logout": "Logout",
+    "register": "Register",
+    "reset": "Reset Password",
+    "fb": "Facebook",
+    "google": "Google",
+    "connectWith": "Or connect with",
+    "passwordNotMatch": "Passwords do not match.",
+    "signinWithCredentials": "Or sign in with credentials",
+    "signupWithCredentials": "Or sign up with credentials",
+    "forgotPass": "Forgot password?",
+    "createAccount": "Create Account",
+    "createNewAccount": "Create new account",
+    "createAnAccount": "Create an account",
+    "signupWith": "Signup with",
+    "welcome": "Welcome Merchants!",
+    "iAgree": "I agree with the",
+    "betterSafeThanSorry": "Better to be safe than sorry."
+  },
+  "NETWORK": {
+    "network": {
+      "connected": "You are connected to the internet.",
+      "slow": "You have a slow internet connection.",
+      "disconnected": {
+        "title": "Looks like you lost your connection. ",
+        "message": "Please check it and try again."
+      },
+      "failed": {
+        "title": "Failed to connect to internet.",
+        "message": "Can't connect to the network."
+      }
+    }
+  }
+}

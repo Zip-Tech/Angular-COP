@@ -1,0 +1,32 @@
+{
+  "SHARED": {
+    "zip": "zipeli",
+    "about": "About Us",
+    "privacy": "Privacy Policy",
+    "tos": "Terms of Services",
+    "fb": "Facebook",
+    "google": "Google",
+    "ig": "Instagram",
+    "tw": "Twitter",
+    "and": "and"
+  },
+  "AUTH": {
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "reset": "Reset Password",
+    "fb": "Facebook",
+    "google": "Google",
+    "signinWith": "Sign in with",
+    "signinWithCredentials": "Or sign in with credentials",
+    "signupWithCredentials": "Or sign up with credentials",
+    "forgotPass": "Forgot password?",
+    "createAccount": "Create Account",
+    "createNewAccount": "Create new account",
+    "createAnAccount": "Create an account",
+    "signupWith": "Signup with",
+    "welcome": "Welcome Merchants!",
+    "iAgree": "I agree with the",
+    "betterSafeThanSorry": "Better to be safe than sorry."
+  }
+}

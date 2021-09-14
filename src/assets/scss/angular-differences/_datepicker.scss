@@ -1,0 +1,18 @@
+/* .bs-datepicker */
+.bs-datepicker {
+  box-shadow: none;
+  @extend .rounded-sm;
+
+  .bs-datepicker-body {
+    border: none;
+  }
+
+  .bs-datepicker-container {
+    @extend .p-0;
+  }
+
+  .bs-datepicker-head {
+    @extend .rounded-0;
+  }
+
+}

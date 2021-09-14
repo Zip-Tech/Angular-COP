@@ -23,7 +23,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/custom-theme.scss", "src/styles.css"],
+            "styles": [
+              "src/styles.scss",
+              "src/assets/scss/zipeli.scss",
+              "src/custom-theme.scss"
+            ],
             "scripts": []
           },
           "configurations": {
