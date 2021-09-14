@@ -69,6 +69,16 @@ describe('LoginComponent', () => {
     expect(component.loginForm.valid).toBeTruthy();
   });
 
+  it('email should be asd@asd.com', () => {
+    component.loginForm.controls['email'].setValue('asd@asd.com');
+    expect(component.email?.value).toBe('asd@asd.com');
+   });
+
+  it('password should be @Abc123456', () => {
+    component.loginForm.controls['password'].setValue('@Abc123456');
+    expect(component.password?.value).toBe('@Abc123456');
+   });
+
   // Expected spy onSubmit to have been called.
 
   // it(`should call the onSubmit method`, async () => {

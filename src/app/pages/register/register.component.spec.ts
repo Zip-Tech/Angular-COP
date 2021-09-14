@@ -57,4 +57,19 @@ describe('RegisterComponent', () => {
     component.signupForm.controls['password'].setValue('@Abc123456');
     expect(component.signupForm.valid).toBeTruthy();
   });
+
+  it('username should be abc1234', () => {
+    component.signupForm.controls['username'].setValue('abc1234');
+    expect(component.username?.value).toBe('abc1234');
+   });
+
+  it('email should be asd@asd.com', () => {
+    component.signupForm.controls['email'].setValue('asd@asd.com');
+    expect(component.email?.value).toBe('asd@asd.com');
+   });
+
+  it('password should be @Abc123456', () => {
+    component.signupForm.controls['password'].setValue('@Abc123456');
+    expect(component.password?.value).toBe('@Abc123456');
+   });
 });
