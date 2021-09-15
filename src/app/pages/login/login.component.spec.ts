@@ -1,3 +1,4 @@
+import { DebugElement } from '@angular/core';
 import {
   ComponentFixture,
   fakeAsync,
@@ -17,6 +18,7 @@ import { LoginComponent } from './login.component';
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
+  let debugElement: DebugElement;
   let authService: AuthService;
 
   beforeEach(async () => {
@@ -43,7 +45,8 @@ describe('LoginComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
-    authService = TestBed.get(AuthService);
+    debugElement = fixture.debugElement;
+    authService = debugElement.injector.get(AuthService);
     fixture.detectChanges();
   });
 
@@ -57,13 +60,13 @@ describe('LoginComponent', () => {
     expect(component.onSubmit).toHaveBeenCalled();
   });
 
-  it(`form should be invalid`, async() => {
+  it(`form should be invalid`, async () => {
     component.loginForm.controls['email'].setValue('');
     component.loginForm.controls['password'].setValue('');
     expect(component.loginForm.valid).toBeFalsy();
   });
 
-  it(`form should be valid`, async() => {
+  it(`form should be valid`, async () => {
     component.loginForm.controls['email'].setValue('asd@asd.com');
     component.loginForm.controls['password'].setValue('@Abc123456');
     expect(component.loginForm.valid).toBeTruthy();
@@ -72,19 +75,20 @@ describe('LoginComponent', () => {
   it('email should be asd@asd.com', () => {
     component.loginForm.controls['email'].setValue('asd@asd.com');
     expect(component.email?.value).toBe('asd@asd.com');
-   });
+  });
 
   it('password should be @Abc123456', () => {
     component.loginForm.controls['password'].setValue('@Abc123456');
     expect(component.password?.value).toBe('@Abc123456');
-   });
+  });
 
   // Expected spy onSubmit to have been called.
 
   // it(`should call the onSubmit method`, async () => {
-  //   spyOn(component, 'onSubmit');
-  //   const button = fixture.debugElement.query(By.css('button'));
-  //   button.triggerEventHandler('click', {});
+  //   // spyOn(component, 'onSubmit');
+  //   debugElement
+  //     .query(By.css('[data-testid="login-button"]'))
+  //     .triggerEventHandler('click', null);
   //   fixture.detectChanges();
 
   //   fixture.whenStable().then(() => {

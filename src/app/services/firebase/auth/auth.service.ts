@@ -22,10 +22,7 @@ export class AuthService {
   user: any;
   userDoc: any;
 
-  constructor(
-    private router: Router,
-    private ngZone: NgZone
-  ) {
+  constructor(private router: Router, private ngZone: NgZone) {
     this.user$ = user(this.authClient).pipe(
       tap((u) => {
         if (u) {
@@ -74,7 +71,7 @@ export class AuthService {
         const user_ref = firebase.firestore().collection('users');
         const data = {
           username,
-          email
+          email,
         };
         user_ref
           .doc(res?.user?.uid)
