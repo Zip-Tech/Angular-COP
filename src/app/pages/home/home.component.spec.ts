@@ -5,15 +5,11 @@ import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AuthService } from '@firebase/auth/auth.service';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { User } from '@state/auth/auth.model';
 import { of } from 'rxjs';
 import { AngularMaterialModule } from 'src/app/styles/angular-material.module';
 
 import { HomeComponent } from './home.component';
 
-class MockAuthService {
-  user = { name: 'Test User' };
-}
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -72,5 +68,13 @@ describe('HomeComponent', () => {
   //   fixture.whenStable().then(() => {
   //     expect(component.logout).toHaveBeenCalled();
   //   });
+  // });
+
+  // it('should test click', () => {
+  //   spyOn(component, 'logout');
+  //   // fixture.debugElement.query(By.css('[data-testid="logout"]')).nativeElement.click();
+  //     const button = fixture.debugElement.query(By.css('[data-testid="logout"]'));
+  //   button.triggerEventHandler('click', {});
+  //   expect(component.logout).toHaveBeenCalled();
   // });
 });

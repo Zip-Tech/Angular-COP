@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AuthService } from '@firebase/auth/auth.service';
@@ -72,4 +73,21 @@ describe('RegisterComponent', () => {
     component.signupForm.controls['password'].setValue('@Abc123456');
     expect(component.password?.value).toBe('@Abc123456');
    });
+
+   it(`should call the onSubmit method`, async () => {
+    spyOn(component, 'onSubmit');
+
+    component.signupForm.controls['username'].setValue('abc1234');
+    component.signupForm.controls['email'].setValue('asd@asd.com');
+    component.signupForm.controls['password'].setValue('@Abc123456');
+    fixture.detectChanges();
+
+    fixture.debugElement.query(By.css('#signup-form'))
+      .triggerEventHandler('ngSubmit', null);
+    fixture.detectChanges();
+
+    fixture.whenStable().then(() => {
+      expect(component.onSubmit).toHaveBeenCalled();
+    });
+  });
 });

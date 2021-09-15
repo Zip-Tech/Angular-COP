@@ -46,7 +46,7 @@ describe('LoginComponent', () => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
-    authService = debugElement.injector.get(AuthService);
+    authService = TestBed.inject(AuthService);
     fixture.detectChanges();
   });
 
@@ -82,17 +82,19 @@ describe('LoginComponent', () => {
     expect(component.password?.value).toBe('@Abc123456');
   });
 
-  // Expected spy onSubmit to have been called.
+   it(`should call the onSubmit method`, async () => {
+    spyOn(component, 'onSubmit');
 
-  // it(`should call the onSubmit method`, async () => {
-  //   // spyOn(component, 'onSubmit');
-  //   debugElement
-  //     .query(By.css('[data-testid="login-button"]'))
-  //     .triggerEventHandler('click', null);
-  //   fixture.detectChanges();
+    component.loginForm.controls['email'].setValue('asd@asd.com');
+    component.loginForm.controls['password'].setValue('@Abc123456');
+    fixture.detectChanges();
 
-  //   fixture.whenStable().then(() => {
-  //     expect(component.onSubmit).toHaveBeenCalled();
-  //   });
-  // });
+    fixture.debugElement.query(By.css('#login-form'))
+      .triggerEventHandler('ngSubmit', null);
+    fixture.detectChanges();
+
+    fixture.whenStable().then(() => {
+      expect(component.onSubmit).toHaveBeenCalled();
+    });
+  });
 });
