@@ -1,6 +1,6 @@
 import * as fromRouter from '@ngrx/router-store';
 import { createSelector } from '@ngrx/store';
-import { StoreRootState } from '../state.reducers';
+import { StoreRootState } from '@state/state.reducers';
 
 export const getRouterState = (state: StoreRootState) => state.router;
 

@@ -19,7 +19,19 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@firebase/*": ["./src/app/services/firebase/*"],
+      "@security/*": ["./src/app/services/security/*"],
+      "@state/*": ["./src/app/state/*"],
+      "@components/*": ["./src/app/components/*"],
+      "@models/*": ["./src/app/models/*"],
+      "@constants/*": ["./src/app/core/constants/*"],
+      "@shared/*": ["./src/app/services/shared/*"],
+      "@utils/*": ["./src/app/services/utils/*"],
+      "@environments/*": ["./src/environments/*"],
+      "@pipes/*": ["./src/app/core/pipes/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

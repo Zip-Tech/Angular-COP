@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
+import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from '@firebase/auth/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -57,7 +56,7 @@ export class LoginComponent {
     return this.loginForm.get('password');
   }
 
-  async onSubmit() {
+  onSubmit() {
     this.auth.emailLogin(this.email?.value, this.password?.value);
   }
 

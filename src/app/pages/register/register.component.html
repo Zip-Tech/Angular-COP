@@ -4,7 +4,7 @@
       <mat-card-title>Register</mat-card-title>
     </mat-card-header>
 
-    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="example-form">
+    <form [formGroup]="signupForm"  id="signup-form" (ngSubmit)="onSubmit()" class="example-form">
       <mat-card-content>
         <mat-form-field class="example-full-width">
           <input
@@ -38,7 +38,6 @@
             required
           />
         </mat-form-field>
-
       </mat-card-content>
 
       <button
@@ -50,5 +49,9 @@
         Register
       </button>
     </form>
+    <br />
+    <a class="link footer-link" [routerLink]="['/login']">
+      Already have an account? Login
+    </a>
   </mat-card>
 </div>

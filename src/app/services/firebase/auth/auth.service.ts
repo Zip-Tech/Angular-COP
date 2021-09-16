@@ -1,8 +1,7 @@
-import { Injectable, NgZone, ApplicationRef } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { UntilDestroy } from '@ngneat/until-destroy';
 import * as firebase from 'firebase/app';
-import { auth } from 'firebase/app';
 
 import { user } from 'rxfire/auth';
 import { docData } from 'rxfire/firestore';
@@ -23,11 +22,7 @@ export class AuthService {
   user: any;
   userDoc: any;
 
-  constructor(
-    private router: Router,
-    private ngZone: NgZone,
-    private app: ApplicationRef
-  ) {
+  constructor(private router: Router, private ngZone: NgZone) {
     this.user$ = user(this.authClient).pipe(
       tap((u) => {
         if (u) {
@@ -76,7 +71,7 @@ export class AuthService {
         const user_ref = firebase.firestore().collection('users');
         const data = {
           username,
-          email
+          email,
         };
         user_ref
           .doc(res?.user?.uid)
